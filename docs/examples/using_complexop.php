@@ -5,7 +5,7 @@
  * $Id$
  */
 
-require_once 'ComplexOp.php';
+require_once 'Math/ComplexOp.php';
 
 $a = new Math_Complex(0.3,0.5);
 $b = new Math_Complex(1.0,-M_PI_2);

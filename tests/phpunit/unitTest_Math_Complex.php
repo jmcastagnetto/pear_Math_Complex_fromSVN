@@ -1,0 +1,79 @@
+<?php
+
+// uses PHPUnit 0.6.2
+require_once 'PHPUnit.php';
+require_once 'Math/Complex.php';
+
+/**
+ * Unit test for Math_Complex
+ *
+ * @package Math_Complex
+ * @author
+ * @version
+ */
+class Math_Complex_UnitTest extends PHPUnit_TestCase { /*{{{*/
+
+    var $o1 = null;
+
+    function Math_Complex_UnitTest($name) { /*{{{*/
+        $this->PHPUnit_TestCase($name);
+    } /*}}}*/
+
+    function setUp() { /*{{{*/
+        // set up your test vars and data
+        $this->o1 = new Math_Complex(3,2);
+    } /*}}}*/
+
+    function testToString() { /*{{{*/
+        // test of Math_Complex::toString
+        $this->assertEquals("3 + 2i", $this->o1->toString());
+    } /*}}}*/
+
+    function testAbs2() { /*{{{*/
+        // test of Math_Complex::abs2
+        $this->assertEquals(13, $this->o1->abs2());
+    } /*}}}*/
+
+    function testAbs() { /*{{{*/
+        // test of Math_Complex::abs
+        $this->assertEquals(strval(3.60555127546), strval($this->o1->abs()));
+    } /*}}}*/
+
+    function testNorm() { /*{{{*/
+        // test of Math_Complex::norm
+        $this->assertEquals(strval(3.60555127546), strval($this->o1->norm()));
+    } /*}}}*/
+
+    function testArg() { /*{{{*/
+        // test of Math_Complex::arg
+        $this->assertEquals(strval(0.588002603548), strval($this->o1->arg()));
+    } /*}}}*/
+
+    function testAngle() { /*{{{*/
+        // test of Math_Complex::angle
+        $this->assertEquals(strval(0.588002603548), strval($this->o1->angle()));
+    } /*}}}*/
+
+    function testGetReal() { /*{{{*/
+        // test of Math_Complex::getReal
+        $this->assertEquals(3, $this->o1->getReal());
+    } /*}}}*/
+
+    function testGetIm() { /*{{{*/
+        // test of Math_Complex::getIm
+        $this->assertEquals(2, $this->o1->getIm());
+    } /*}}}*/
+
+}/*}}}*/
+
+function _format($number) {
+    echo (float)$number.'   '.sprintf('%.12', $number)."\n";
+    return sprintf('%.12', $number);
+}
+
+
+$suite = &new PHPUnit_TestSuite('Math_Complex_UnitTest');
+$result = PHPUnit::run($suite);
+echo $result->toString();
+
+?>
