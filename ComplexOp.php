@@ -514,8 +514,16 @@ class Math_ComplexOp {/*{{{*/
 		}
 	}/*}}}*/
 
-	// TODO Document Hyperbolic methods
+	// Hyperbolic methods
 	
+	/**
+	 * Calculates the hyperbolic sine of a complex number
+	 * z = sinh(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &sinh (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
@@ -525,6 +533,14 @@ class Math_ComplexOp {/*{{{*/
 		return new Math_Complex(sinh($r) * cos($i), cosh($r) * sin($i));
 	}/*}}}*/
 
+	/**
+	 * Calculates the hyperbolic cosine of a complex number
+	 * z = cosh(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &cosh (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
@@ -534,6 +550,14 @@ class Math_ComplexOp {/*{{{*/
 		return new Math_Complex(cosh($r) * cos($i), sinh($r) * sin($i));
 	}/*}}}*/
 
+	/**
+	 * Calculates the hyperbolic tangent of a complex number
+	 * z = tanh(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &tanh (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
@@ -544,6 +568,14 @@ class Math_ComplexOp {/*{{{*/
 		return new Math_Complex(sinh($r) * cosh($r) / $d, 0.5 * sin(2 * $i) / $d);
 	}/*}}}*/
 
+	/**
+	 * Calculates the hyperbolic secant of a complex number
+	 * z = sech(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &sech (&$c1) {/*{{{*/
 		$c2 = Math_ComplexOp::cosh($c1);
 		if (PEAR::isError($c2)) {
@@ -553,6 +585,14 @@ class Math_ComplexOp {/*{{{*/
 		}
 	}/*}}}*/
 
+	/**
+	 * Calculates the hyperbolic cosecant of a complex number
+	 * z = csch(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &csch (&$c1) {/*{{{*/
 		$c2 = Math_ComplexOp::sinh($c1);
 		if (PEAR::isError($c2)) {
@@ -562,6 +602,14 @@ class Math_ComplexOp {/*{{{*/
 		}
 	}/*}}}*/
 
+	/**
+	 * Calculates the hyperbolic cotangent of a complex number
+	 * z = coth(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &coth (&$c1) {/*{{{*/
 		$c2 = Math_ComplexOp::tanh($c1);
 		if (PEAR::isError($c2)) {
@@ -571,8 +619,16 @@ class Math_ComplexOp {/*{{{*/
 		}
 	}/*}}}*/
 
-	// TODO Document Inverse hyperbolic
+	// Inverse hyperbolic methods
 	
+	/**
+	 * Calculates the inverse hyperbolic sine of a complex number
+	 * z = asinh(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &asinh (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
@@ -586,6 +642,14 @@ class Math_ComplexOp {/*{{{*/
 		}
 	}/*}}}*/
 
+	/**
+	 * Calculates the inverse hyperbolic cosine of a complex number
+	 * z = acosh(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &acosh (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
@@ -598,6 +662,14 @@ class Math_ComplexOp {/*{{{*/
 		}
 	}/*}}}*/
 
+	/**
+	 * Calculates the inverse hyperbolic tangent of a complex number
+	 * z = atanh(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
 	function &atanh (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
@@ -605,7 +677,7 @@ class Math_ComplexOp {/*{{{*/
 		if ($c1->getIm() == 0.0) {
 			$r = $c1->getReal();
 			if ($r > -1.0 && $r < 1.0) {
-				return Math_Complex(atanh($r), 0.0)
+				return Math_Complex(atanh($r), 0.0);
 			} else {
 				return Math_Complex(atanh(1 / $r), (($a < 0) ? M_PI_2 : -1 * M_PI_2));
 			}
@@ -616,7 +688,15 @@ class Math_ComplexOp {/*{{{*/
 		}
 	}/*}}}*/
 
-	function &asech ($c1) {/*{{{*/
+	/**
+	 * Calculates the inverse hyperbolic secant of a complex number
+	 * z = asech(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
+	function &asech (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
 		}
@@ -624,7 +704,15 @@ class Math_ComplexOp {/*{{{*/
 		return Math_ComplexOp::acosh($z);
 	}/*}}}*/
 
-	function &acsch ($c1) {/*{{{*/
+	/**
+	 * Calculates the inverse hyperbolic cosecant of a complex number
+	 * z = acsch(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
+	function &acsch (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
 		}
@@ -632,7 +720,15 @@ class Math_ComplexOp {/*{{{*/
 		return Math_ComplexOp::asinh($z);
 	}/*}}}*/
 
-	function &acoth ($c1) {/*{{{*/
+	/**
+	 * Calculates the inverse hyperbolic cotangent of a complex number
+	 * z = acoth(c1)
+	 *
+	 * @param object Math_Complex $c1
+	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @access public
+	 */
+	function &acoth (&$c1) {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
 		}
@@ -760,11 +856,10 @@ class Math_ComplexOp {/*{{{*/
 			if ($ar == 0.0 && $ai == 0.0) {
 				$r = $i = 0.0;
 			} else {
-				$logr = Math_ComplexOp::log($c1);
+				$logr = log($c1->abs());
 				$theta = $c1->arg();
 				$rho = exp($logr * $br - $bi * $theta);
 				$beta = $theta * $br + $bi * $logr;
-
 				$r = $rho * cos($beta);
 				$i = $rho * sin($beta);
 			}
