@@ -34,126 +34,142 @@ include_once "PEAR.php";
 
 class Math_Complex {/*{{{*/
 
-	/**
-	 * The real part of the complex number
-	 *
-	 * @var	float
-	 * @access	private
-	 */
-	var $real;
+    /**
+     * The real part of the complex number
+     *
+     * @var float
+     * @access  private
+     */
+    var $_real;
 
-	/**
-	 * The imaginary part of the complex number
-	 *
-	 * @var float
-	 * @access	private
-	 */
-	var $im;
-	
-	/**
-	 * Constructor for Math_Complex
-	 * 
-	 * @param float $real Real part of the number
-	 * @param float $im Imaginary part of the number
-	 * @return object Math_Complex
-	 * @access public
-	 */
-	function Math_Complex($real, $im) {/*{{{*/
-		$this->real = floatval($real);
-		$this->im = floatval($im);
-	}/*}}}*/
-	
-	/**
-	 * Simple string representation of the number
-	 *
-	 * @return string
-	 * @access public
-	 */
-	function toString() {/*{{{*/
-		$r = $this->getReal();
-		$i = $this->getIm();
-		$str = $r;
-		$str .=  ($i < 0) ? ' - ' : ' + ';
-		$str .= abs($i).'i';
-		return $str;
-	}/*}}}*/
+    /**
+     * The imaginary part of the complex number
+     *
+     * @var float
+     * @access  private
+     */
+    var $_im;
+    
+    /*{{{ Meth_Complex() */
+    /**
+     * Constructor for Math_Complex
+     * 
+     * @param float $real Real part of the number
+     * @param float $im Imaginary part of the number
+     * @return object Math_Complex
+     * @access public
+     */
+    function Math_Complex($real, $im) 
+    {
+        $this->_real = floatval($real);
+        $this->_im = floatval($im);
+    }/*}}}*/
+    
+    /**
+     * Simple string representation of the number
+     *
+     * @return string
+     * @access public
+     */
+    function toString() 
+    {
+        $r = $this->getReal();
+        $i = $this->getIm();
+        $str = $r;
+        $str .=  ($i < 0) ? ' - ' : ' + ';
+        $str .= abs($i).'i';
+        return $str;
+    }/*}}}*/
 
-	/**
-	 * Returns the square of the magnitude of the number
-	 *
-	 * @return float
-	 * @access public
-	 */
-	function abs2() {/*{{{*/
-		return ($this->real*$this->real + $this->im*$this->im);
-	}	/*}}}*/
+    /*{{{ abs2() */
+    /**
+     * Returns the square of the magnitude of the number
+     *
+     * @return float
+     * @access public
+     */
+    function abs2() 
+    {
+        return ($this->real*$this->real + $this->im*$this->im);
+    }/*}}}*/
 
-	/**
-	 * Returns the magnitude (also referred as norm) of the number
-	 *
-	 * @return float
-	 * @access public
-	 */
-	function abs() {/*{{{*/
-		return sqrt($this->abs2());
-	}/*}}}*/
-	
-	/**
-	 * Returns the norm of the number
-	 * Alias of Math_Complex::abs()
-	 *
-	 * @return float
-	 * @access public
-	 */
-	function norm() {/*{{{*/
-		return $this->abs();
-	}/*}}}*/
+    /*{{{ abs() */
+    /**
+     * Returns the magnitude (also referred as norm) of the number
+     *
+     * @return float
+     * @access public
+     */
+    function abs() 
+    {
+        return sqrt($this->abs2());
+    }/*}}}*/
+    
+    /*{{{ norm() */
+    /**
+     * Returns the norm of the number
+     * Alias of Math_Complex::abs()
+     *
+     * @return float
+     * @access public
+     */
+    function norm() 
+    {
+        return $this->abs();
+    }/*}}}*/
 
-	/**
-	 * Returns the argument of the complex number
-	 *
-	 * @return mixed A float on success, a PEAR_Error otherwise
-	 * @access public
-	 */
-	function arg() {/*{{{*/
-		$arg = atan2($this->im,$this->real);
-		if (M_PI < $arg || $arg < -1*M_PI) {
-			return PEAR::raiseError('Argument has an impossible value');
-		} else {
-			return $arg;
-		}
+    /*{{{ arg() */
+    /**
+     * Returns the argument of the complex number
+     *
+     * @return float|PEAR_Error A floating point number on success, a PEAR_Error otherwise
+     * @access public
+     */
+    function arg() 
+    {
+        $arg = atan2($this->im,$this->real);
+        if (M_PI < $arg || $arg < -1*M_PI) {
+            return PEAR::raiseError('Argument has an impossible value');
+        } else {
+            return $arg;
+        }
 
-	}/*}}}*/
+    }/*}}}*/
 
-	/**
-	 * Returns the angle (argument) associated with the complex number
-	 * Alias of Math_Complex::arg()
-	 *
-	 * @return mixed A float on success, a PEAR_Error otherwise
-	 * @access public
-	 */
-	function angle() {/*{{{*/
-		return $this->arg();
-	}/*}}}*/
+    /*{{{ angle() */
+    /**
+     * Returns the angle (argument) associated with the complex number
+     * Alias of Math_Complex::arg()
+     *
+     * @return mixed A float on success, a PEAR_Error otherwise
+     * @access public
+     */
+    function angle() {
+        return $this->arg();
+    }/*}}}*/
 
-	/**
-	 * Returns the real part of the complex number
-	 *
-	 * @return float
-	 * @access pulic
-	 */
-	function getReal() {/*{{{*/
-		return $this->real;
-	}/*}}}*/
+    /*{{{ getReal() */
+    /**
+     * Returns the real part of the complex number
+     *
+     * @return float
+     * @access pulic
+     */
+    function getReal() 
+    {
+        return $this->_real;
+    }/*}}}*/
 
-	/**
-	 * Returns the imaginary part of the complex number
-	 * @return float
-	 * @access public
-	 */
-	function getIm() {/*{{{*/
-		return $this->im;
-	}/*}}}*/
+    /*{{{ getIm() */
+    /**
+     * Returns the imaginary part of the complex number
+     * @return float
+     * @access public
+     */
+    function getIm() 
+    {
+        return $this->_im;
+    }/*}}}*/
 
 } /* end of Math_Complex class *//*}}}*/
 
