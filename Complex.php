@@ -50,7 +50,7 @@ class Math_Complex {/*{{{*/
      */
     var $_im;
     
-    /*{{{ Meth_Complex() */
+    /*{{{ Math_Complex() */
     /**
      * Constructor for Math_Complex
      * 
@@ -90,7 +90,7 @@ class Math_Complex {/*{{{*/
      */
     function abs2() 
     {
-        return ($this->real*$this->real + $this->im*$this->im);
+        return ($this->_real * $this->_real + $this->_im * $this->_im);
     }/*}}}*/
 
     /*{{{ abs() */
@@ -127,7 +127,7 @@ class Math_Complex {/*{{{*/
      */
     function arg() 
     {
-        $arg = atan2($this->im,$this->real);
+        $arg = atan2($this->_im,$this->_real);
         if (M_PI < $arg || $arg < -1*M_PI) {
             return PEAR::raiseError('Argument has an impossible value');
         } else {

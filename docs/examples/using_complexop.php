@@ -82,6 +82,7 @@ echo "asech(a) = ".$z->toString()."\n";
 $z = Math_ComplexOp::acsch($a);
 echo "acsch(a) = ".$z->toString()."\n";
 $z = Math_ComplexOp::acoth($a);
+echo "acoth(a) = ".$z->toString()."\n";
 if (!Math_ComplexOp::areEqual($a, $b))
 	echo "a != b\n";
 $z = Math_ComplexOp::add($a, $b);

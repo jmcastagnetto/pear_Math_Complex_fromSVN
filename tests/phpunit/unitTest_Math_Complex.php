@@ -8,8 +8,8 @@ require_once 'Math/Complex.php';
  * Unit test for Math_Complex
  *
  * @package Math_Complex
- * @author
- * @version
+ * @author Jesus M. Castagnetto
+ * @version 0.8.2
  */
 class Math_Complex_UnitTest extends PHPUnit_TestCase { /*{{{*/
 

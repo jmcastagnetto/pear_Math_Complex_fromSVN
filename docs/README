@@ -1,3 +1,2 @@
-- UML diagram for the classes in Math_Complex.dia
-  and Math_Complex.png
-- Unit tests require PHPUnit 0.6.2
+- UML diagram for the classes in Math_Complex.dia and Math_Complex.png
+- Unit tests require use PHPUnit 1.0
