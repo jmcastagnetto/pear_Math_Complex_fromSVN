@@ -22,6 +22,14 @@
 include_once "PEAR.php";
 
 /**
+ * Package with classes to represent and manipulate complex number. Contain
+ * definitions for basic arithmetic functions, as well as trigonometric,
+ * inverse trigonometric, hyperbolic, inverse hyperbolic, exponential and
+ * logarithms of complex numbers.
+ * @package Math_Complex
+ */
+
+/**
  * Math_Complex: class to represent an manipulate complex numbers (z = a + b*i)
  *
  * Originally this class was part of NumPHP (Numeric PHP package)
@@ -29,9 +37,7 @@ include_once "PEAR.php";
  * @author  Jesus M. Castagnetto <jmcastagnetto@php.net>
  * @version 0.8
  * @access  public
- * @package Math_Complex
  */
-
 class Math_Complex {/*{{{*/
 
     /**
