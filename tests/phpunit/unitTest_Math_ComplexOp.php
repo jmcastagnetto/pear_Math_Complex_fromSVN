@@ -8,36 +8,43 @@ require_once 'Math/ComplexOp.php';
  * Unit test for Math_ComplexOp
  *
  * @package Math_ComplexOp
- * @author
- * @version
+ * @author Jesus M. Castagnetto
+ * @version 0.8.2
  */
 class Math_ComplexOp_UnitTest extends PHPUnit_TestCase { /*{{{*/
 
+    var $cnum1;
+    var $cnum2;
+    
     function Math_ComplexOp_UnitTest($name) { /*{{{*/
         $this->PHPUnit_TestCase($name);
     } /*}}}*/
 
     function setUp() { /*{{{*/
-        // set up your test vars and data
+        $this->cnum1 = new Math_Complex(3,4);
+        $this->cnum2 = new Math_Complex(0.707106781187,0.707106781187);
     } /*}}}*/
 
     function tearDown() { /*{{{*/
-        // clean up after yourself
+        unset($this->cnum);
     } /*}}}*/
 
     // test of Math_ComplexOp::isComplex
     function testIsComplex() { /*{{{*/
-        $this->assertEquals(TODO, Math_ComplexOp::isComplex());
+        $this->assertEquals(true, Math_ComplexOp::isComplex($this->cnum1));
     } /*}}}*/
 
     // test of Math_ComplexOp::createFromPolar
     function testCreateFromPolar() { /*{{{*/
-        $this->assertEquals(TODO, Math_ComplexOp::createFromPolar());
+        $c1 = Math_ComplexOp::createFromPolar(1,M_PI_4);
+        $this->assertEquals($this->cnum2->toString(), $c1->toString());
     } /*}}}*/
 
     // test of Math_ComplexOp::sqrt
     function testSqrt() { /*{{{*/
-        $this->assertEquals(TODO, Math_ComplexOp::sqrt());
+        $c1 = new Math_Complex(0.923879532512, 0.382683432365);
+        $tmp = Math_ComplexOp::sqrt($this->cnum2);
+        $this->assertEquals($c1->toString(), $tmp->toString());
     } /*}}}*/
 
     // test of Math_ComplexOp::sqrtReal
@@ -257,7 +264,7 @@ class Math_ComplexOp_UnitTest extends PHPUnit_TestCase { /*{{{*/
 
 }/*}}}*/
 
-$suite = new PHPUnit_TestSuite('Math_ComplexOp_UnitTest')
+$suite = new PHPUnit_TestSuite('Math_ComplexOp_UnitTest');
 $result = PHPUnit::run($suite);
 echo $result->toString();
 
