@@ -24,24 +24,52 @@
 
   <release>
     <license>PHP</license>
-    <version>0.8</version>
-    <date>2002-11-24</date>
+    <version>0.8.2</version>
+    <date>2004-04-13</date>
     <notes>
-       Initial release under PEAR.
-    </notes>
-    <state>beta</state>
-    <filelist>
-      <dir name="/" baseinstalldir="Math">
-       <file role="php">Complex.php</file>
-       <file role="php">ComplexOp.php</file>
-      </dir>
-    </filelist>
-    <deps>
+     Fixed bug in Math_ComplexOp::createFromPolar() (reported by Nicolas
+     Vollmar, nvollmar@ee.ethz.ch).
+     Made changes to the use of get_class() will work equally well in PHP 4
+     and PHP 5 (later returns properly capitalized class name).
+     Added UML diagram for package and unit tests that use PHPUnit 0.6.2
+    </notes>                                         
+    <state>beta</state>                              
+    <filelist>                                       
+      <dir name="/" baseinstalldir="Math">           
+       <file role="php">Complex.php</file>           
+       <file role="php">ComplexOp.php</file>         
+       <dir name="docs" role="doc">
+        <file>README</file>
+        <file>Math_Complex.dia</file>
+        <file>Math_Complex.png</file>
+        <dir name="examples" role="doc">
+         <file>using_complexop.php</file>
+        </dir>
+       </dir>
+       <dir name="tests" role="test">
+        <dir name="phpunit" role="test">
+         <file>unitTest_Math_Complex.php</file>
+         <file>unitTest_Math_ComplexOp.php</file>
+        </dir>
+       </dir>
+      </dir>                                         
+    </filelist>                                      
+    <deps>                                           
      <dep type="pkg" rel="ge" version="1.0">Math_TrigOp</dep>
     </deps>
   </release>
   <changelog>
-    <release>
-    </release>
+   <release>
+    <license>PHP</license>
+    <version>0.8</version>
+    <date>2002-11-24</date>
+    <notes>
+     Initial release under PEAR.
+    </notes>
+    <state>beta</state>
+    <deps>
+     <dep type="pkg" rel="ge" version="1.0">Math_TrigOp</dep>
+    </deps>
+   </release>
   </changelog>
 </package>
