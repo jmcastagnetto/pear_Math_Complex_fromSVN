@@ -49,7 +49,7 @@ class Math_ComplexOp {/*{{{*/
         if (function_exists('is_a')) {
             return is_a(&$c1, 'math_complex');
         } else {
-            return (get_class($c1) == 'math_complex' 
+            return (strtolower(get_class($c1)) == 'math_complex' 
                     || is_subclass_of($c1, 'math_complex'));
         }
     }/*}}}*/
@@ -838,7 +838,7 @@ class Math_ComplexOp {/*{{{*/
             || !Math_ComplexOp::isComplex($c2)) {
             return PEAR::raiseError('Both arguments must be PEAR::Math_Complex objects');
         } else {
-            $same_class = ( get_class($c1) == get_class($c2) );
+            $same_class = ( strtolower(get_class($c1)) == strtolower(get_class($c2)) );
             $same_real = ( $c1->getReal() == $c2->getReal() );
             $same_im = ( $c1->getIm() == $c2->getIm() );
             return ( $same_class && $same_real && $same_im );
