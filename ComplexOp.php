@@ -39,7 +39,7 @@ class Math_ComplexOp {/*{{{*/
 	/**
 	 * Checks if a given object is an instance of PEAR::Math_Complex
 	 *
-	 * @returns boolean
+	 * @return boolean
 	 * @access public
 	 */
 	function isComplex(&$c1) {/*{{{*/
@@ -56,7 +56,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param float $r
 	 * @param float $theta
-	 * @returns object Math_Complex
+	 * @return object Math_Complex
 	 * @access public
 	 */
 	function &createFromPolar ($r, $theta) {/*{{{*/
@@ -74,7 +74,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = sqrt(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &sqrt (&$c1) {/*{{{*/
@@ -109,7 +109,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = sqrt(realnumber)
 	 *
 	 * @param float $realnum A float
-	 * @returns object Math_Complex
+	 * @return object Math_Complex
 	 * @access public
 	 */
 	function &sqrtReal ($realnum) {/*{{{*/
@@ -128,7 +128,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = exp(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &exp (&$c1) {/*{{{*/
@@ -147,7 +147,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = log(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &log (&$c1) {/*{{{*/
@@ -163,7 +163,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = log10(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &log10 (&$c1) {/*{{{*/
@@ -178,7 +178,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = conj(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &conjugate (&$c1) {/*{{{*/
@@ -192,7 +192,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = -c1
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &negative (&$c1) {/*{{{*/
@@ -208,7 +208,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = 1/c1
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &inverse (&$c1) {/*{{{*/
@@ -230,7 +230,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = sin(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &sin (&$c1) {/*{{{*/
@@ -247,7 +247,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = cos(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &cos (&$c1) {/*{{{*/
@@ -264,7 +264,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = tan(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &tan (&$c1) {/*{{{*/
@@ -284,7 +284,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = sec(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &sec (&$c1) {/*{{{*/
@@ -299,7 +299,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = csc(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &csc (&$c1) {/*{{{*/
@@ -314,7 +314,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = cot(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &cot (&$c1) {/*{{{*/
@@ -333,7 +333,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = asin(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &asin (&$c1) {/*{{{*/
@@ -398,7 +398,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = asinReal(r)
 	 *
 	 * @param float $r
-	 * @returns object Math_Complex 
+	 * @return object Math_Complex 
 	 * @access public
 	 */
 	function &asinReal($r) {/*{{{*/
@@ -419,7 +419,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = acos(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &acos (&$c1) {/*{{{*/
@@ -439,7 +439,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = atan(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &atan (&$c1) {/*{{{*/
@@ -462,7 +462,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = asec(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &asec (&$c1) {/*{{{*/
@@ -481,7 +481,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = acsc(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &acsc (&$c1) {/*{{{*/
@@ -500,7 +500,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = acot(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &acot (&$c1) {/*{{{*/
@@ -521,7 +521,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = sinh(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &sinh (&$c1) {/*{{{*/
@@ -538,7 +538,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = cosh(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &cosh (&$c1) {/*{{{*/
@@ -555,7 +555,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = tanh(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &tanh (&$c1) {/*{{{*/
@@ -573,7 +573,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = sech(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &sech (&$c1) {/*{{{*/
@@ -590,7 +590,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = csch(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &csch (&$c1) {/*{{{*/
@@ -607,7 +607,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = coth(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &coth (&$c1) {/*{{{*/
@@ -626,7 +626,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = asinh(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &asinh (&$c1) {/*{{{*/
@@ -647,7 +647,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = acosh(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &acosh (&$c1) {/*{{{*/
@@ -667,7 +667,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = atanh(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &atanh (&$c1) {/*{{{*/
@@ -693,7 +693,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = asech(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &asech (&$c1) {/*{{{*/
@@ -709,7 +709,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = acsch(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &acsch (&$c1) {/*{{{*/
@@ -725,7 +725,7 @@ class Math_ComplexOp {/*{{{*/
 	 * z = acoth(c1)
 	 *
 	 * @param object Math_Complex $c1
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &acoth (&$c1) {/*{{{*/
@@ -743,7 +743,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param object Math_Complex $c2
-	 * @returns mixed True if $c1 == $c2, False if $c1 != $c2, PEAR_Error object on error
+	 * @return mixed True if $c1 == $c2, False if $c1 != $c2, PEAR_Error object on error
 	 * @access public
 	 */
 	function &areEqual (&$c1, &$c2) {/*{{{*/
@@ -763,7 +763,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param object Math_Complex $c2
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &add (&$c1, &$c2) {/*{{{*/
@@ -780,7 +780,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param object Math_Complex $c2
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &sub (&$c1, &$c2) {/*{{{*/
@@ -797,7 +797,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param object Math_Complex $c2
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &mult (&$c1, &$c2) {/*{{{*/
@@ -816,7 +816,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param object Math_Complex $c2
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &div (&$c1, &$c2) {/*{{{*/
@@ -842,7 +842,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param object Math_Complex $c2
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &pow (&$c1, &$c2) {/*{{{*/
@@ -872,7 +872,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param object Math_Complex $c2
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &logBase (&$c1, &$c2) {/*{{{*/
@@ -893,7 +893,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param float $real
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &multReal (&$c1, $real) {/*{{{*/
@@ -916,7 +916,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param float $im
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &multIm ($c1, $im) {/*{{{*/
@@ -936,7 +936,7 @@ class Math_ComplexOp {/*{{{*/
 	 *
 	 * @param object Math_Complex $c1
 	 * @param float $real
-	 * @returns object Math_Complex on success, PEAR_Error otherwise
+	 * @return object Math_Complex on success, PEAR_Error otherwise
 	 * @access public
 	 */
 	function &powReal ($c1, $real) {/*{{{*/
