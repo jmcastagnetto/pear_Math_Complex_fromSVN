@@ -153,7 +153,7 @@ class Math_Complex {/*{{{*/
      * Returns the real part of the complex number
      *
      * @return float
-     * @access pulic
+     * @access public
      */
     function getReal() 
     {
