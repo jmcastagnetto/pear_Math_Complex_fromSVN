@@ -616,6 +616,30 @@ class Math_ComplexOp {/*{{{*/
 		}
 	}/*}}}*/
 
+	function &asech ($c1) {/*{{{*/
+		if (!Math_ComplexOp::isComplex($c1)) {
+			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
+		}
+		$z = Math_ComplexOp::inverse($c1);
+		return Math_ComplexOp::acosh($z);
+	}/*}}}*/
+
+	function &acsch ($c1) {/*{{{*/
+		if (!Math_ComplexOp::isComplex($c1)) {
+			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
+		}
+		$z = Math_ComplexOp::inverse($c1);
+		return Math_ComplexOp::asinh($z);
+	}/*}}}*/
+
+	function &acoth ($c1) {/*{{{*/
+		if (!Math_ComplexOp::isComplex($c1)) {
+			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
+		}
+		$z = Math_ComplexOp::inverse($c1);
+		return Math_ComplexOp::atanh($z);
+	}/*}}}*/
+
 	// functions below need 2 valid Math_Complex objects as parameters
 
 	/**
