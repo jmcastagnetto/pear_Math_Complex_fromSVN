@@ -1,4 +1,5 @@
 <?php
+
 //
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
@@ -24,6 +25,15 @@ include_once 'Math/Complex.php';
 include_once 'Math/TrigOp.php';
 
 /**
+ * Package with classes to represent and manipulate complex number. Contain
+ * definitions for basic arithmetic functions, as well as trigonometric,
+ * inverse trigonometric, hyperbolic, inverse hyperbolic, exponential and
+ * logarithms of complex numbers.
+ *
+ * @package Math_Complex
+ */
+
+/**
  * Math_ComplexOp: static class to operate on Math_Complex objects
  *
  * Originally this class was part of NumPHP (Numeric PHP package)
@@ -33,7 +43,6 @@ include_once 'Math/TrigOp.php';
  * @access  public
  * @package Math_Complex
  */
-
 class Math_ComplexOp {/*{{{*/
 
     /*{{{ isComplex() */
