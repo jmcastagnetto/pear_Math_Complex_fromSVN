@@ -602,6 +602,18 @@ class Math_ComplexOp {/*{{{*/
 		if (!Math_ComplexOp::isComplex($c1)) {
 			return PEAR::raiseError('argument is not a PEAR::Math_Complex object');
 		}
+		if ($c1->getIm() == 0.0) {
+			$r = $c1->getReal();
+			if ($r > -1.0 && $r < 1.0) {
+				return Math_Complex(atanh($r), 0.0)
+			} else {
+				return Math_Complex(atanh(1 / $r), (($a < 0) ? M_PI_2 : -1 * M_PI_2));
+			}
+		} else {
+			$z = Math_ComplexOp::multIm($c1, 1.0);
+			$z = Math_ComplexOp::atan($z);
+			return Math_ComplexOp::multIm($z, -1.0);
+		}
 	}/*}}}*/
 
 	// functions below need 2 valid Math_Complex objects as parameters
