@@ -55,7 +55,7 @@ class Math_Complex {/*{{{*/
 	 * 
 	 * @param float $real Real part of the number
 	 * @param float $im Imaginary part of the number
-	 * @returns object Math_Complex
+	 * @return object Math_Complex
 	 * @access public
 	 */
 	function Math_Complex($real, $im) {/*{{{*/
@@ -66,7 +66,7 @@ class Math_Complex {/*{{{*/
 	/**
 	 * Simple string representation of the number
 	 *
-	 * @returns string
+	 * @return string
 	 * @access public
 	 */
 	function toString() {/*{{{*/
@@ -81,7 +81,7 @@ class Math_Complex {/*{{{*/
 	/**
 	 * Returns the square of the magnitude of the number
 	 *
-	 * @returns float
+	 * @return float
 	 * @access public
 	 */
 	function abs2() {/*{{{*/
@@ -91,7 +91,7 @@ class Math_Complex {/*{{{*/
 	/**
 	 * Returns the magnitude (also referred as norm) of the number
 	 *
-	 * @returns float
+	 * @return float
 	 * @access public
 	 */
 	function abs() {/*{{{*/
@@ -102,7 +102,7 @@ class Math_Complex {/*{{{*/
 	 * Returns the norm of the number
 	 * Alias of Math_Complex::abs()
 	 *
-	 * @returns float
+	 * @return float
 	 * @access public
 	 */
 	function norm() {/*{{{*/
@@ -112,7 +112,7 @@ class Math_Complex {/*{{{*/
 	/**
 	 * Returns the argument of the complex number
 	 *
-	 * @returns mixed A float on success, a PEAR_Error otherwise
+	 * @return mixed A float on success, a PEAR_Error otherwise
 	 * @access public
 	 */
 	function arg() {/*{{{*/
@@ -129,7 +129,7 @@ class Math_Complex {/*{{{*/
 	 * Returns the angle (argument) associated with the complex number
 	 * Alias of Math_Complex::arg()
 	 *
-	 * @returns mixed A float on success, a PEAR_Error otherwise
+	 * @return mixed A float on success, a PEAR_Error otherwise
 	 * @access public
 	 */
 	function angle() {/*{{{*/
