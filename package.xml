@@ -24,14 +24,15 @@
 
   <release>
     <license>PHP</license>
-    <version>0.8.2</version>
+    <version>0.8.5</version>
     <date>2004-04-13</date>
     <notes>
      Fixed bug in Math_ComplexOp::createFromPolar() (reported by Nicolas
      Vollmar, nvollmar@ee.ethz.ch).
-     Made changes to the use of get_class() will work equally well in PHP 4
-     and PHP 5 (later returns properly capitalized class name).
-     Added UML diagram for package and unit tests that use PHPUnit 0.6.2
+     Made changes to the use of get_class(), it will now work equally well in PHP 4
+     and PHP 5. In PHP 4 that function returns all lowercase, in PHP 5 is
+     properly capitalized, using strtolower() to make it homogenous.
+     Added UML diagram for package and unit tests that use PHPUnit 1.0
     </notes>                                         
     <state>beta</state>                              
     <filelist>                                       
