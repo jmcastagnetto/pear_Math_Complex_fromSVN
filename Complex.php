@@ -180,4 +180,3 @@ class Math_Complex {/*{{{*/
 } /* end of Math_Complex class *//*}}}*/
 
 ?>
-
