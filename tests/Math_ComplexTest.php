@@ -11,7 +11,7 @@ require_once 'Math/Complex.php';
  * @author Jesus M. Castagnetto
  * @version 0.8.2
  */
-class Math_Complex_UnitTest extends PHPUnit_Framework_TestCase { /*{{{*/
+class Math_ComplexTest extends PHPUnit_Framework_TestCase { /*{{{*/
 
     var $o1 = null;
 
