@@ -1,76 +1,92 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
-<!-- do not use the "Type" attribute here, that one is only for
-     generated package.xml files -->
-<package>
-
-  <name>Math_Complex</name>
-  <summary>Classes that define complex numbers and their operations</summary>
-  <description>
-   Classes that represent and manipulate complex numbers. Contain definitions
-   for basic arithmetic functions, as well as trigonometric, inverse
-   trigonometric, hyperbolic, inverse hyperbolic, exponential and
-   logarithms of complex numbers.
-  </description>
-
-  <maintainers>
-    <maintainer>
-      <user>jmcastagnetto</user>
-      <name>Jesus M. Castagnetto</name>
-      <email>jmcastagnetto@php.net</email>
-      <role>lead</role>
-    </maintainer>
-  </maintainers>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Math_Complex</name>
+ <channel>pear.php.net</channel>
+ <summary>Classes that define complex numbers and their operations</summary>
+ <description>Classes that represent and manipulate complex numbers. Contain definitions
+for basic arithmetic functions, as well as trigonometric, inverse
+trigonometric, hyperbolic, inverse hyperbolic, exponential and
+logarithms of complex numbers.
+ </description>
+ <lead>
+  <name>Jesus M. Castagnetto</name>
+  <user>jmcastagnetto</user>
+  <email>jmcastagnetto@php.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-10-05</date>
+ <time>00:35:40</time>
+ <version>
+  <release>0.8.5</release>
+  <api>0.8.5</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.php.net/license">PHP</license>
+ <notes>
+Fixed bug in Math_ComplexOp::createFromPolar() (reported by Nicolas
+Vollmar, nvollmar@ee.ethz.ch).
+Made changes to the use of get_class(), it will now work equally well in PHP 4
+and PHP 5. In PHP 4 that function returns all lowercase, in PHP 5 is
+properly capitalized, using strtolower() to make it homogenous.
+Added UML diagram for package and unit tests that use PHPUnit 1.0
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="docs">
+    <dir name="examples">
+     <file baseinstalldir="/" name="using_complexop.php" role="doc" />
+    </dir> <!-- /docs/examples -->
+    <file baseinstalldir="/" name="Math_Complex.dia" role="doc" />
+    <file baseinstalldir="/" name="Math_Complex.png" role="doc" />
+    <file baseinstalldir="/" name="README" role="doc" />
+   </dir> <!-- /docs -->
+   <dir name="tests">
+    <dir name="phpunit">
+     <file baseinstalldir="/" name="unitTest_Math_Complex.php" role="test" />
+     <file baseinstalldir="/" name="unitTest_Math_ComplexOp.php" role="test" />
+    </dir> <!-- /tests/phpunit -->
+   </dir> <!-- /tests -->
+   <file baseinstalldir="/" name="Complex.php" role="php" />
+   <file baseinstalldir="/" name="ComplexOp.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>Math_TrigOp</name>
+    <channel>pear.php.net</channel>
+    <min>1.0</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
   <release>
-    <license>PHP</license>
-    <version>0.8.5</version>
-    <date>2004-04-13</date>
-    <notes>
-     Fixed bug in Math_ComplexOp::createFromPolar() (reported by Nicolas
-     Vollmar, nvollmar@ee.ethz.ch).
-     Made changes to the use of get_class(), it will now work equally well in PHP 4
-     and PHP 5. In PHP 4 that function returns all lowercase, in PHP 5 is
-     properly capitalized, using strtolower() to make it homogenous.
-     Added UML diagram for package and unit tests that use PHPUnit 1.0
-    </notes>                                         
-    <state>beta</state>                              
-    <filelist>                                       
-      <dir name="/" baseinstalldir="Math">           
-       <file role="php">Complex.php</file>           
-       <file role="php">ComplexOp.php</file>         
-       <dir name="docs" role="doc">
-        <file>README</file>
-        <file>Math_Complex.dia</file>
-        <file>Math_Complex.png</file>
-        <dir name="examples" role="doc">
-         <file>using_complexop.php</file>
-        </dir>
-       </dir>
-       <dir name="tests" role="test">
-        <dir name="phpunit" role="test">
-         <file>unitTest_Math_Complex.php</file>
-         <file>unitTest_Math_ComplexOp.php</file>
-        </dir>
-       </dir>
-      </dir>                                         
-    </filelist>                                      
-    <deps>                                           
-     <dep type="pkg" rel="ge" version="1.0">Math_TrigOp</dep>
-    </deps>
+   <version>
+    <release>0.8</release>
+    <api>0.8</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2002-11-24</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+Initial release under PEAR.
+   </notes>
   </release>
-  <changelog>
-   <release>
-    <license>PHP</license>
-    <version>0.8</version>
-    <date>2002-11-24</date>
-    <notes>
-     Initial release under PEAR.
-    </notes>
-    <state>beta</state>
-    <deps>
-     <dep type="pkg" rel="ge" version="1.0">Math_TrigOp</dep>
-    </deps>
-   </release>
-  </changelog>
+ </changelog>
 </package>
