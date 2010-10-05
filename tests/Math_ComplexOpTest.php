@@ -9,7 +9,7 @@ require_once 'Math/ComplexOp.php';
  * @author Jesus M. Castagnetto
  * @version 0.8.2
  */
-class Math_ComplexOp_UnitTest extends PHPUnit_Framework_TestCase { /*{{{*/
+class Math_ComplexOpTest extends PHPUnit_Framework_TestCase { /*{{{*/
 
     var $cnum1;
     var $cnum2;
