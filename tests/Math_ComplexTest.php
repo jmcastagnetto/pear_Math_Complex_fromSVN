@@ -1,7 +1,7 @@
 <?php
 
 // uses PHPUnit 0.6.2
-require_once 'PHPUnit.php';
+require_once 'PHPUnit/Framework.php';
 require_once 'Math/Complex.php';
 
 /**
@@ -11,13 +11,9 @@ require_once 'Math/Complex.php';
  * @author Jesus M. Castagnetto
  * @version 0.8.2
  */
-class Math_Complex_UnitTest extends PHPUnit_TestCase { /*{{{*/
+class Math_Complex_UnitTest extends PHPUnit_Framework_TestCase { /*{{{*/
 
     var $o1 = null;
-
-    function Math_Complex_UnitTest($name) { /*{{{*/
-        $this->PHPUnit_TestCase($name);
-    } /*}}}*/
 
     function setUp() { /*{{{*/
         // set up your test vars and data
@@ -65,15 +61,3 @@ class Math_Complex_UnitTest extends PHPUnit_TestCase { /*{{{*/
     } /*}}}*/
 
 }/*}}}*/
-
-function _format($number) {
-    echo (float)$number.'   '.sprintf('%.12', $number)."\n";
-    return sprintf('%.12', $number);
-}
-
-
-$suite = &new PHPUnit_TestSuite('Math_Complex_UnitTest');
-$result = PHPUnit::run($suite);
-echo $result->toString();
-
-?>

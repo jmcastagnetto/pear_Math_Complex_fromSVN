@@ -1,7 +1,5 @@
 <?php
-
-// uses PHPUnit 0.6.2
-require_once 'PHPUnit.php';
+require_once 'PHPUnit/Framework.php';
 require_once 'Math/ComplexOp.php';
 
 /**
@@ -11,15 +9,11 @@ require_once 'Math/ComplexOp.php';
  * @author Jesus M. Castagnetto
  * @version 0.8.2
  */
-class Math_ComplexOp_UnitTest extends PHPUnit_TestCase { /*{{{*/
+class Math_ComplexOp_UnitTest extends PHPUnit_Framework_TestCase { /*{{{*/
 
     var $cnum1;
     var $cnum2;
     var $im;
-    
-    function Math_ComplexOp_UnitTest($name) { /*{{{*/
-        $this->PHPUnit_TestCase($name);
-    } /*}}}*/
 
     function setUp() { /*{{{*/
         $this->cnum1 = new Math_Complex(0.3,0.5);
@@ -134,6 +128,9 @@ class Math_ComplexOp_UnitTest extends PHPUnit_TestCase { /*{{{*/
 
     // test of Math_ComplexOp::asinAlt
     function testAsinAlt() { /*{{{*/
+        if (!function_exists('log1p')) {
+            $this->markTestSkipped("Your php installation appears broken?");
+        }
         $tmp = Math_ComplexOp::asinAlt($this->cnum1);
         $this->assertEquals('0.269555641425 + 0.49790294283i', $tmp->toString());
     } /*}}}*/
@@ -306,9 +303,3 @@ class Math_ComplexOp_UnitTest extends PHPUnit_TestCase { /*{{{*/
     } /*}}}*/
 
 }/*}}}*/
-
-$suite = new PHPUnit_TestSuite('Math_ComplexOp_UnitTest');
-$result = PHPUnit::run($suite);
-echo $result->toString();
-
-?>
