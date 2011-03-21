@@ -23,7 +23,7 @@ logarithms of complex numbers.</description>
   <release>beta</release>
   <api>beta</api>
  </stability>
- <license uri="http://www.php.net/license">PHP</license>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New/Simplified BSD</license>
  <notes>
 QA release
 Updated to PHPUnit 3.4+
