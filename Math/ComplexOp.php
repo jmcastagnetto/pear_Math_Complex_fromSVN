@@ -1,21 +1,36 @@
 <?php
 
 //
-// +----------------------------------------------------------------------+
-// | PHP Version 4                                                        |
-// +----------------------------------------------------------------------+
-// | Copyright (c) 1997-2003 The PHP Group                                |
-// +----------------------------------------------------------------------+
-// | This source file is subject to version 2.0 of the PHP license,       |
-// | that is bundled with this package in the file LICENSE, and is        |
-// | available at through the world-wide-web at                           |
-// | http://www.php.net/license/2_02.txt.                                 |
-// | If you did not receive a copy of the PHP license and are unable to   |
-// | obtain it through the world-wide-web, please send a note to          |
-// | license@php.net so we can mail you a copy immediately.               |
-// +----------------------------------------------------------------------+
-// | Authors: Jesus M. Castagnetto <jmcastagnetto@php.net>                |
-// +----------------------------------------------------------------------+
+// +---------------------------------------------------------------------------------+
+// | PHP Version 4                                                                   |
+// +---------------------------------------------------------------------------------+
+// | Copyright (c) 1997-2011 The PEAR Group                                          |
+// | All rights reserved.                                                            |
+// +---------------------------------------------------------------------------------+
+// | Redistribution and use in source and binary forms, with or without              |
+// | modification, are permitted provided that the following conditions are met:     |
+// |     * Redistributions of source code must retain the above copyright            |
+// |       notice, this list of conditions and the following disclaimer.             |
+// |     * Redistributions in binary form must reproduce the above copyright         |
+// |       notice, this list of conditions and the following disclaimer in the       |
+// |       documentation and/or other materials provided with the distribution.      |
+// |     * Neither the name of the PEAR GROUP nor the                                |
+// |       names of its contributors may be used to endorse or promote products      |
+// |       derived from this software without specific prior written permission.     |
+// |                                                                                 |
+// | THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND |
+// | ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED   |
+// | WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE          |
+// | DISCLAIMED. IN NO EVENT SHALL THE PEAR GROUP BE LIABLE FOR ANY                  |
+// | DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES      |
+// | (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;    |
+// | LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND     |
+// | ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT      |
+// | (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS   |
+// | SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                    |
+// +---------------------------------------------------------------------------------+
+// | Authors: Jesus M. Castagnetto <jmcastagnetto@php.net>                           |
+// +---------------------------------------------------------------------------------+
 //
 // $Id$
 //
@@ -59,7 +74,7 @@ class Math_ComplexOp {/*{{{*/
             return is_a(&$c1, 'math_complex');
         } else {
             return (strtolower(get_class($c1)) == 'math_complex' 
-                    || is_subclass_of($c1, 'math_complex'));
+                               || is_subclass_of($c1, 'math_complex'));
         }
     }/*}}}*/
 
@@ -844,7 +859,7 @@ class Math_ComplexOp {/*{{{*/
     function &areEqual (&$c1, &$c2) 
     {
         if (!Math_ComplexOp::isComplex($c1) 
-            || !Math_ComplexOp::isComplex($c2)) {
+                       || !Math_ComplexOp::isComplex($c2)) {
             return PEAR::raiseError('Both arguments must be PEAR::Math_Complex objects');
         } else {
             $same_class = ( strtolower(get_class($c1)) == strtolower(get_class($c2)) );
@@ -867,7 +882,7 @@ class Math_ComplexOp {/*{{{*/
     function &add (&$c1, &$c2) 
     {
         if (!Math_ComplexOp::isComplex($c1) 
-            || !Math_ComplexOp::isComplex($c2)) {
+                       || !Math_ComplexOp::isComplex($c2)) {
             return PEAR::raiseError('Both arguments must be PEAR::Math_Complex objects');
         } else {
             return new Math_Complex( $c1->getReal() + $c2->getReal(), $c1->getIm() + $c2->getIm());
@@ -907,7 +922,7 @@ class Math_ComplexOp {/*{{{*/
     function &mult (&$c1, &$c2) 
     {
         if (!Math_ComplexOp::isComplex($c1) 
-            || !Math_ComplexOp::isComplex($c2)) {
+                       || !Math_ComplexOp::isComplex($c2)) {
             return PEAR::raiseError('Both arguments must be PEAR::Math_Complex objects');
         } else {
             $r = ($c1->getReal() * $c2->getReal()) - ($c1->getIm() * $c2->getIm());
@@ -929,7 +944,7 @@ class Math_ComplexOp {/*{{{*/
     function &div (&$c1, &$c2) 
     {
         if (!Math_ComplexOp::isComplex($c1) 
-            || !Math_ComplexOp::isComplex($c2)) {
+                       || !Math_ComplexOp::isComplex($c2)) {
             return PEAR::raiseError('Both arguments must be PEAR::Math_Complex objects');
         } else {
             $a = $c1->getReal(); $b = $c1->getIm();
@@ -958,7 +973,7 @@ class Math_ComplexOp {/*{{{*/
     function &pow (&$c1, &$c2) 
     {
         if (!Math_ComplexOp::isComplex($c1) 
-            || !Math_ComplexOp::isComplex($c2)) {
+                       || !Math_ComplexOp::isComplex($c2)) {
             return PEAR::raiseError('Both arguments must be PEAR::Math_Complex objects');
         } else {
             $ar = $c1->getReal(); $ai = $c1->getIm();
@@ -991,7 +1006,7 @@ class Math_ComplexOp {/*{{{*/
     function &logBase (&$c1, &$c2) 
     {
         if (!Math_ComplexOp::isComplex($c1) 
-            || !Math_ComplexOp::isComplex($c2)) {
+                       || !Math_ComplexOp::isComplex($c2)) {
             return PEAR::raiseError('Both arguments must be PEAR::Math_Complex objects');
         } else {
             return Math_ComplexOp::div(Math_ComplexOp::log($c1), Math_ComplexOp::log($c2));
